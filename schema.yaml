@@ -1,0 +1,127 @@
+x-google-marketplace:
+  schemaVersion: v2
+  applicationApiVersion: v1beta1
+  # The published version is required and MUST match the tag
+  # of the deployer image
+  publishedVersion: '2020.3.0'
+  publishedVersionMetadata:
+    releaseNote: >-
+      Initial release.
+
+    # If "recommended" is "true", users using older releases are encouraged
+    # to update as soon as possible. This is useful if, for example, this release
+    # fixes a critical issue.
+    recommended: true
+      
+  # The images property will be filled in during part 2
+  images: 
+    appviewx:
+      properties:
+        appviewx.image.registry:
+          type: REGISTRY
+        appviewx.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        appviewx.image.tag:
+          type: TAG
+    mongodb:
+      properties:
+        appviewx.mongodb.image.registry:
+          type: REGISTRY
+        appviewx.mongodb.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        appviewx.mongodb.image.tag:
+          type: TAG
+    mongodbseed:
+      properties:
+        appviewx.mongodbseed.image.registry:
+          type: REGISTRY
+        appviewx.mongodbseed.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        appviewx.mongodbseed.image.tag:
+          type: TAG
+    avx-config-server:
+      properties:
+        appviewx.avx-config-server.image.registry:
+          type: REGISTRY
+        appviewx.avx-config-server.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        appviewx.avx-config-server.image.tag:
+          type: TAG
+    avx-commons:
+      properties:
+        appviewx.avx-commons.image.registry:
+          type: REGISTRY
+        appviewx.avx-commons.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        appviewx.avx-commons.image.tag:
+          type: TAG
+    avx-platform-core:
+      properties:
+        appviewx.avx-platform-core.image.registry:
+          type: REGISTRY
+        appviewx.avx-platform-core.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        appviewx.avx-platform-core.image.tag:
+          type: TAG
+    avx-platform-queue:
+      properties:
+        appviewx.avx-platform-queue.image.registry:
+          type: REGISTRY
+        appviewx.avx-platform-queue.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        appviewx.avx-platform-queue.image.tag:
+          type: TAG 
+    avx-crontab:
+      properties:
+        appviewx.avx-crontab.image.registry:
+          type: REGISTRY
+        appviewx.avx-crontab.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        appviewx.avx-crontab.image.tag:
+          type: TAG
+    avx-platform-gateway:
+      properties:
+        appviewx.avx-platform-gateway.image.registry:
+          type: REGISTRY
+        appviewx.avx-platform-gateway.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        appviewx.avx-platform-gateway.image.tag:
+          type: TAG
+    avx-platform-web:
+      properties:
+        appviewx.avx-platform-web.image.registry:
+          type: REGISTRY
+        appviewx.avx-platform-web.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        appviewx.avx-platform-web.image.tag:
+          type: TAG
+    avx-subsystems:
+      properties:
+        appviewx.avx-subsystems.image.registry:
+          type: REGISTRY
+        appviewx.avx-subsystems.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        appviewx.avx-subsystems.image.tag:
+          type: TAG
+    avx-vendors:
+      properties:
+        appviewx.avx-vendors.image.registry:
+          type: REGISTRY
+        appviewx.avx-vendors.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        appviewx.avx-vendors.image.tag:
+          type: TAG
+
+properties:
+  name:
+    type: string
+    x-google-marketplace:
+      type: NAME
+  namespace:
+    type: string
+    x-google-marketplace:
+      type: NAMESPACE
+
+required:
+- name
+- namespace

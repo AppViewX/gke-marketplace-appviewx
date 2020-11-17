@@ -1,0 +1,7 @@
+common:
+  namespace: avx
+
+appviewx:
+  logsCapacityStorage: 5Gi
+  pvmountpath: /home
+  mountpath: /appviewx/dependencies/
