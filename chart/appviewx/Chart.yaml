@@ -1,0 +1,37 @@
+apiVersion: v2
+name: appviewx
+description: AppViewX Network and Security Automation
+type: application
+version: 1.0.0
+appVersion: 2020.3.0
+keywords:
+- appviewx
+- network
+- automation
+
+dependencies:
+  - name: mongodb
+    version: 1.0.0
+  - name: mongodbseed
+    version: 1.0.0
+  - name: avx-config-server
+    version: 1.0.0
+  - name: avx-commons
+    version: 1.0.0
+  - name: avx-platform-core
+    verison: 1.0.0
+  - name: avx-platform-queue
+    version: 1.0.0
+  - name: avx-crontab
+    version: 1.0.0
+  - name: avx-platform-gateway
+    version: 1.0.0
+  - name: avx-platform-web
+    version: 1.0.0
+  - name: avx-subsystems
+    version: 1.0.0
+  - name: avx-vendors
+    version: 1.0.0
+  - name: avx-ingress
+    version: 1.0.0
+
