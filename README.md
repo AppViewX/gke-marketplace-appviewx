@@ -204,7 +204,7 @@ The above changes are mandatory to access the AppViewX application as by default
 Run the following command to get the AppViewX application URL
 ```shell
 SERVICE_IP=$(kubectl get ingress avx-ingress --namespace avx --output jsonpath='{.status.loadBalancer.ingress[0].ip}')
-echo "https://${SERVICE_IP}/appviewx/login/"
+echo "https://${SERVICE_IP}/appviewx/login"
 ```
 
 # Delete the Application
