@@ -135,7 +135,7 @@ kubectl create namespace $NAMESPACE
 Run the install script
 
 ```shell
-mpdev install --deployer=gcr.io/appviewxclm/appviewx/deployer:2020.3.0 --parameters='{"name": "'$NAME'", "namespace": "'$NAMESPACE'"}'
+mpdev install --deployer=gcr.io/appviewxclm/appviewx/deployer:2020.3.0 --parameters='{"name": "'$APP_NAME'", "namespace": "'$NAMESPACE'"}'
 ```
 
 Watch the deployment come up with
@@ -175,10 +175,36 @@ Update the health check url for avx-platform-web
 ```
 The above changes are mandatory to access the AppViewX application as by default the health check url for loadbalancer is configured as "/". It will take some time for loadbalancer to update the changes and verify if all Backend services are marked as green.
 
+#### Create TLS certificate for AppViewX
+
+> Note: You can skip this step if you have not set up external access.
+
+1.  If you already have a certificate that you want to use, copy your
+    certificate and key pair to the `/tmp/tls.crt`, and `/tmp/tls.key` files,
+    then skip to the next step.
+
+    To create a new certificate, run the following command:
+
+    ```shell
+    openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+        -keyout /tmp/tls.key \
+        -out /tmp/tls.crt \
+        -subj "/CN=appviewx/O=appviewx"
+    ```
+
+2.  Create the tls secret:
+
+    ```shell
+    * Note down the name of the application APP_NAME and NAMESPACE from the Run installer script section
+    
+    * kubectl create secret tls $APP_NAME-tls -n $NAMESPACE --cert /tmp/tls.crt --key /tmp/tls.key
+    
+    ```
+
 Run the following command to get the AppViewX application URL
 ```shell
 SERVICE_IP=$(kubectl get ingress avx-ingress --namespace avx --output jsonpath='{.status.loadBalancer.ingress[0].ip}')
-echo "http://${SERVICE_IP}/appviewx/login/"
+echo "https://${SERVICE_IP}/appviewx/login/"
 ```
 
 # Delete the Application
