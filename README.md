@@ -99,8 +99,8 @@ You need to run this command once.
 #### Clone this repo
 
 ```shell
-git clone https://github.com/appviewx/appviewx-gke-marketplace.git
-git checkout master
+git clone https://github.com/AppViewX/gke-marketplace-appviewx.git
+git checkout main
 ```
 
 #### Pull deployer image
@@ -112,7 +112,7 @@ gcloud auth configure-docker
 
 Pull the deployer image to your local docker registry
 ```shell
-docker pull gcr.io/appviewx-gke/appviewx/deployer:2020.3.0
+docker pull gcr.io/appviewx-clm-public/appviewx/deployer:2020.3.0
 ```
 
 #### Run installer script
@@ -135,7 +135,7 @@ kubectl create namespace $NAMESPACE
 Run the install script
 
 ```shell
-mpdev install --deployer=gcr.io/appviewx-gke/appviewx/deployer:2020.3.0 --parameters='{"name": "'$NAME'", "namespace": "'$NAMESPACE'"}'
+mpdev install --deployer=gcr.io/appviewx-clm-public/appviewx/deployer:2020.3.0 --parameters='{"name": "'$NAME'", "namespace": "'$NAMESPACE'"}'
 ```
 
 Watch the deployment come up with
