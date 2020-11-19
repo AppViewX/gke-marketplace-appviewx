@@ -99,8 +99,8 @@ You need to run this command once.
 #### Clone this repo
 
 ```shell
-git clone https://github.com/appviewx/appviewx-gke-marketplace.git
-git checkout master
+git clone https://github.com/AppViewX/gke-marketplace-appviewx.git
+git checkout main
 ```
 
 #### Pull deployer image
@@ -112,7 +112,7 @@ gcloud auth configure-docker
 
 Pull the deployer image to your local docker registry
 ```shell
-docker pull gcr.io/appviewx-gke/appviewx/deployer:2020.3.0
+docker pull gcr.io/appviewxclm/appviewx/deployer:2020.3.0
 ```
 
 #### Run installer script
@@ -135,13 +135,76 @@ kubectl create namespace $NAMESPACE
 Run the install script
 
 ```shell
-mpdev install --deployer=gcr.io/appviewx-gke/appviewx/deployer:2020.3.0 --parameters='{"name": "'$NAME'", "namespace": "'$NAMESPACE'"}'
+mpdev install --deployer=gcr.io/appviewxclm/appviewx/deployer:2020.3.0 --parameters='{"name": "'$APP_NAME'", "namespace": "'$NAMESPACE'"}'
 ```
 
 Watch the deployment come up with
 
 ```shell
 kubectl get pods -n $NAMESPACE --watch
+```
+#### Accessing the application
+```shell
+* Click on the Kubernetes Engine -> Services & Ingresses menu
+
+* Select the appviewx-cluster and switch to INGRESS tab
+
+* Click on avx-ingress and look if all the Backend services are marked as green under INGRESS section
+
+* If all the Backend services marked with green you are good to access the application else do the following steps. 
+```
+Update the health check url for avx-platform-gateway
+```shell
+* Click on avx-platform-gateway from Backend services and click the link under Health Check
+
+* Click on EDIT
+
+* Update the Request Path field with /avxmgr/printroutes
+
+* Save the changes
+```
+Update the health check url for avx-platform-web
+```shell
+* Click on avx-platform-web from Backend services and click the link under Health Check
+
+* Click on EDIT
+
+* Update the Request Path field with /appviewx/login/
+
+* Save the changes
+```
+The above changes are mandatory to access the AppViewX application as by default the health check url for loadbalancer is configured as "/". It will take some time for loadbalancer to update the changes and verify if all Backend services are marked as green.
+
+#### Create TLS certificate for AppViewX
+
+> Note: You can skip this step if you have not set up external access.
+
+1.  If you already have a certificate that you want to use, copy your
+    certificate and key pair to the `/tmp/tls.crt`, and `/tmp/tls.key` files,
+    then skip to the next step.
+
+    To create a new certificate, run the following command:
+
+    ```shell
+    openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+        -keyout /tmp/tls.key \
+        -out /tmp/tls.crt \
+        -subj "/CN=appviewx/O=appviewx"
+    ```
+
+2.  Create the tls secret:
+
+    ```shell
+    * Note down the name of the application APP_NAME and NAMESPACE from the Run installer script section
+    
+    * kubectl create secret tls $APP_NAME-tls -n $NAMESPACE --cert /tmp/tls.crt --key /tmp/tls.key
+    
+    ```
+
+Run the following command to get the AppViewX application URL
+```shell
+SERVICE_IP=$(kubectl get ingress avx-ingress --namespace avx --output jsonpath='{.status.loadBalancer.ingress[0].ip}')
+echo "https://${SERVICE_IP}/appviewx/login"
 ```
 
 # Delete the Application
@@ -157,9 +220,9 @@ There are two approaches to deleting the AppViewX application
 
 1. In the GCP Console, open [Kubernetes Applications](https://console.cloud.google.com/kubernetes/application).
 
-1. From the list of applications, click **appviewx**.
+2. From the list of applications, click **appviewx**.
 
-1. On the Application Details page, click **Delete**.
+3. On the Application Details page, click **Delete**.
 
 ## <a name="using-command-line"></a>Using the command line
 
