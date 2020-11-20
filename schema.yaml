@@ -1,5 +1,6 @@
 x-google-marketplace:
   schemaVersion: v2
+
   applicationApiVersion: v1beta1
   # The published version is required and MUST match the tag
   # of the deployer image
@@ -7,12 +8,6 @@ x-google-marketplace:
   publishedVersionMetadata:
     releaseNote: >-
       Initial release.
-
-    # If "recommended" is "true", users using older releases are encouraged
-    # to update as soon as possible. This is useful if, for example, this release
-    # fixes a critical issue.
-    recommended: true
-      
   # The images property will be filled in during part 2
   images: 
     appviewx:
@@ -110,6 +105,33 @@ x-google-marketplace:
         appviewx.avx-vendors.image.repository:
           type: REPO_WITHOUT_REGISTRY
         appviewx.avx-vendors.image.tag:
+          type: TAG
+
+    avx-vendor-cert-scep-agent:
+      properties:
+        appviewx.avx-vendor-cert-scep-agent.image.registry:
+          type: REGISTRY
+        appviewx.avx-vendor-cert-scep-agent.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        appviewx.avx-vendor-cert-scep-agent.image.tag:
+          type: TAG
+
+    avx-vendor-cert-est-agent:
+      properties:
+        appviewx.avx-vendor-cert-est-agent.image.registry:
+          type: REGISTRY
+        appviewx.avx-vendor-cert-est-agent.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        appviewx.avx-vendor-cert-est-agent.image.tag:
+          type: TAG
+
+    avx-vendor-cert-network-discovery:
+      properties:
+        appviewx.avx-vendor-cert-network-discovery.image.registry:
+          type: REGISTRY
+        appviewx.avx-vendor-cert-network-discovery.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        appviewx.avx-vendor-cert-network-discovery.image.tag:
           type: TAG
 
 properties:

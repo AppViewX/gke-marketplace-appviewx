@@ -34,4 +34,10 @@ dependencies:
     version: 1.0.0
   - name: avx-ingress
     version: 1.0.0
+  - name: avx-vendor-cert-scep-agent
+    version: 1.0.0
+  - name: avx-vendor-cert-est-agent
+    version: 1.0.0
+  - name: avx-vendor-cert-network-discovery
+    version: 1.0.0 
 
