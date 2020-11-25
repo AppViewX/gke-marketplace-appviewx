@@ -10,7 +10,7 @@ metadata:
 spec:
   descriptor:
     type: AppViewX
-    version: '2020.3'
+    version: '2020.3.0'
   selector:
     matchLabels:
       app.kubernetes.io/name: "{{ .Release.Name }}"
