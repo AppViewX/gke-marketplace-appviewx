@@ -180,8 +180,8 @@ The above changes are mandatory to access the AppViewX application as by default
 > Note: You can skip this step if you have not set up external access.
 
 1.  If you already have a certificate that you want to use, copy your
-    certificate and key pair to the `/tmp/tls.crt`, and `/tmp/tls.key` files,
-    then skip to the next step.
+    certificate and key pair to the `/tmp/tls.crt`and `/tmp/tls.key` files
+    then skip to the next step (2).
 
     To create a new certificate, run the following command:
 
@@ -209,7 +209,7 @@ echo "https://${SERVICE_IP}/appviewx/login"
 
 # Delete the Application
 
-There are two approaches to deleting the AppViewX application
+There are two approaches to delete the AppViewX application
 
 * [Using the Google Cloud Platform Console](#using-platform-console)
 
