@@ -10,12 +10,10 @@ x-google-marketplace:
       Initial release.
   # The images property will be filled in during part 2
   images: 
-    appviewx:
+    '':
       properties:
-        appviewx.image.registry:
-          type: REGISTRY
         appviewx.image.repository:
-          type: REPO_WITHOUT_REGISTRY
+          type: REPO_WITH_REGISTRY
         appviewx.image.tag:
           type: TAG
     mongodb:
