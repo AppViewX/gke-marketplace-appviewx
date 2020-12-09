@@ -7,8 +7,7 @@ x-google-marketplace:
   publishedVersion: '2020.3.0'
   publishedVersionMetadata:
     releaseNote: >-
-      Initial release.
-  # The images property will be filled in during part 2
+      A first release.
   images: 
     '':
       properties:
@@ -16,120 +15,117 @@ x-google-marketplace:
           type: REPO_WITH_REGISTRY
         appviewx.image.tag:
           type: TAG
-    mongodb:
+    mongo-init:
       properties:
-        appviewx.mongodb.image.registry:
+        mongodb.image.registry:
           type: REGISTRY
-        appviewx.mongodb.image.repository:
+        mongodb.image.repository:
           type: REPO_WITHOUT_REGISTRY
-        appviewx.mongodb.image.tag:
+        mongodb.image.tag:
           type: TAG
-    mongodbseed:
+    mongo-init:
       properties:
-        appviewx.mongodbseed.image.registry:
+        mongodbseed.image.registry:
           type: REGISTRY
-        appviewx.mongodbseed.image.repository:
+        mongodbseed.image.repository:
           type: REPO_WITHOUT_REGISTRY
-        appviewx.mongodbseed.image.tag:
+        mongodbseed.image.tag:
           type: TAG
-    avx-config-server:
+    avx-cloud-managedservice:
       properties:
-        appviewx.avx-config-server.image.registry:
+        avx-config-server.image.registry:
           type: REGISTRY
-        appviewx.avx-config-server.image.repository:
+        avx-config-server.image.repository:
           type: REPO_WITHOUT_REGISTRY
-        appviewx.avx-config-server.image.tag:
+        avx-config-server.image.tag:
           type: TAG
-    avx-commons:
+    avx-cloud-managedservice:
       properties:
-        appviewx.avx-commons.image.registry:
+        avx-commons.image.registry:
           type: REGISTRY
-        appviewx.avx-commons.image.repository:
+        avx-commons.image.repository:
           type: REPO_WITHOUT_REGISTRY
-        appviewx.avx-commons.image.tag:
+        avx-commons.image.tag:
           type: TAG
-    avx-platform-core:
+    avx-cloud-managedservice:
       properties:
-        appviewx.avx-platform-core.image.registry:
+        avx-platform-core.image.registry:
           type: REGISTRY
-        appviewx.avx-platform-core.image.repository:
+        avx-platform-core.image.repository:
           type: REPO_WITHOUT_REGISTRY
-        appviewx.avx-platform-core.image.tag:
+        avx-platform-core.image.tag:
           type: TAG
-    avx-platform-queue:
+    avx-cloud-managedservice:
       properties:
-        appviewx.avx-platform-queue.image.registry:
+        avx-platform-queue.image.registry:
           type: REGISTRY
-        appviewx.avx-platform-queue.image.repository:
+        avx-platform-queue.image.repository:
           type: REPO_WITHOUT_REGISTRY
-        appviewx.avx-platform-queue.image.tag:
+        avx-platform-queue.image.tag:
           type: TAG 
-    avx-crontab:
+    avx-cloud-managedservice:
       properties:
-        appviewx.avx-crontab.image.registry:
+        avx-crontab.image.registry:
           type: REGISTRY
-        appviewx.avx-crontab.image.repository:
+        avx-crontab.image.repository:
           type: REPO_WITHOUT_REGISTRY
-        appviewx.avx-crontab.image.tag:
+        avx-crontab.image.tag:
           type: TAG
-    avx-platform-gateway:
+    avx-cloud-gateway:
       properties:
-        appviewx.avx-platform-gateway.image.registry:
+        avx-platform-gateway.image.registry:
           type: REGISTRY
-        appviewx.avx-platform-gateway.image.repository:
+        avx-platform-gateway.image.repository:
           type: REPO_WITHOUT_REGISTRY
-        appviewx.avx-platform-gateway.image.tag:
+        avx-platform-gateway.image.tag:
           type: TAG
-    avx-platform-web:
+    avx-cloud-web:
       properties:
-        appviewx.avx-platform-web.image.registry:
+        avx-platform-web.image.registry:
           type: REGISTRY
-        appviewx.avx-platform-web.image.repository:
+        avx-platform-web.image.repository:
           type: REPO_WITHOUT_REGISTRY
-        appviewx.avx-platform-web.image.tag:
+        avx-platform-web.image.tag:
           type: TAG
-    avx-subsystems:
+    avx-cloud-managedservice:
       properties:
-        appviewx.avx-subsystems.image.registry:
+        avx-subsystems.image.registry:
           type: REGISTRY
-        appviewx.avx-subsystems.image.repository:
+        avx-subsystems.image.repository:
           type: REPO_WITHOUT_REGISTRY
-        appviewx.avx-subsystems.image.tag:
+        avx-subsystems.image.tag:
           type: TAG
-    avx-vendors:
+    avx-cloud-managedservice:
       properties:
-        appviewx.avx-vendors.image.registry:
+        avx-vendors.image.registry:
           type: REGISTRY
-        appviewx.avx-vendors.image.repository:
+        avx-vendors.image.repository:
           type: REPO_WITHOUT_REGISTRY
-        appviewx.avx-vendors.image.tag:
+        avx-vendors.image.tag:
           type: TAG
-
-    avx-vendor-cert-scep-agent:
+    avx-cloud-managedservice:
       properties:
-        appviewx.avx-vendor-cert-scep-agent.image.registry:
+        avx-vendor-cert-scep-agent.image.registry:
           type: REGISTRY
-        appviewx.avx-vendor-cert-scep-agent.image.repository:
+        avx-vendor-cert-scep-agent.image.repository:
           type: REPO_WITHOUT_REGISTRY
-        appviewx.avx-vendor-cert-scep-agent.image.tag:
+        avx-vendor-cert-scep-agent.image.tag:
           type: TAG
-
-    avx-vendor-cert-est-agent:
+    avx-cloud-managedservice:
       properties:
-        appviewx.avx-vendor-cert-est-agent.image.registry:
+        avx-vendor-cert-est-agent.image.registry:
           type: REGISTRY
-        appviewx.avx-vendor-cert-est-agent.image.repository:
+        avx-vendor-cert-est-agent.image.repository:
           type: REPO_WITHOUT_REGISTRY
-        appviewx.avx-vendor-cert-est-agent.image.tag:
+        avx-vendor-cert-est-agent.image.tag:
           type: TAG
-
-    avx-vendor-cert-network-discovery:
+    avx-cloud-managedservice:
       properties:
-        appviewx.avx-vendor-cert-network-discovery.image.registry:
+        avx-vendor-cert-network-discovery.image.registry:
           type: REGISTRY
-        appviewx.avx-vendor-cert-network-discovery.image.repository:
+        avx-vendor-cert-network-discovery.image.repository:
           type: REPO_WITHOUT_REGISTRY
-        appviewx.avx-vendor-cert-network-discovery.image.tag:
+        avx-vendor-cert-network-discovery.image.tag:
           type: TAG
 
 properties:
