@@ -23,7 +23,7 @@ x-google-marketplace:
           type: REPO_WITHOUT_REGISTRY
         mongodb.image.tag:
           type: TAG
-    mongo-init:
+    avx-cloud-mongoseed:
       properties:
         mongodbseed.image.registry:
           type: REGISTRY
@@ -39,37 +39,59 @@ x-google-marketplace:
           type: REPO_WITHOUT_REGISTRY
         avx-config-server.image.tag:
           type: TAG
-    avx-cloud-managedservice:
-      properties:
         avx-commons.image.registry:
           type: REGISTRY
         avx-commons.image.repository:
           type: REPO_WITHOUT_REGISTRY
         avx-commons.image.tag:
           type: TAG
-    avx-cloud-managedservice:
-      properties:
         avx-platform-core.image.registry:
           type: REGISTRY
         avx-platform-core.image.repository:
           type: REPO_WITHOUT_REGISTRY
         avx-platform-core.image.tag:
           type: TAG
-    avx-cloud-managedservice:
-      properties:
         avx-platform-queue.image.registry:
           type: REGISTRY
         avx-platform-queue.image.repository:
           type: REPO_WITHOUT_REGISTRY
         avx-platform-queue.image.tag:
           type: TAG 
-    avx-cloud-managedservice:
-      properties:
         avx-crontab.image.registry:
           type: REGISTRY
         avx-crontab.image.repository:
           type: REPO_WITHOUT_REGISTRY
         avx-crontab.image.tag:
+          type: TAG
+        avx-subsystems.image.registry:
+          type: REGISTRY
+        avx-subsystems.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        avx-subsystems.image.tag:
+          type: TAG
+        avx-vendors.image.registry:
+          type: REGISTRY
+        avx-vendors.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        avx-vendors.image.tag:
+          type: TAG
+        avx-vendor-cert-scep-agent.image.registry:
+          type: REGISTRY
+        avx-vendor-cert-scep-agent.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        avx-vendor-cert-scep-agent.image.tag:
+          type: TAG
+        avx-vendor-cert-est-agent.image.registry:
+          type: REGISTRY
+        avx-vendor-cert-est-agent.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        avx-vendor-cert-est-agent.image.tag:
+          type: TAG
+        avx-vendor-cert-network-discovery.image.registry:
+          type: REGISTRY
+        avx-vendor-cert-network-discovery.image.repository:
+          type: REPO_WITHOUT_REGISTRY
+        avx-vendor-cert-network-discovery.image.tag:
           type: TAG
     avx-cloud-gateway:
       properties:
@@ -87,47 +109,6 @@ x-google-marketplace:
           type: REPO_WITHOUT_REGISTRY
         avx-platform-web.image.tag:
           type: TAG
-    avx-cloud-managedservice:
-      properties:
-        avx-subsystems.image.registry:
-          type: REGISTRY
-        avx-subsystems.image.repository:
-          type: REPO_WITHOUT_REGISTRY
-        avx-subsystems.image.tag:
-          type: TAG
-    avx-cloud-managedservice:
-      properties:
-        avx-vendors.image.registry:
-          type: REGISTRY
-        avx-vendors.image.repository:
-          type: REPO_WITHOUT_REGISTRY
-        avx-vendors.image.tag:
-          type: TAG
-    avx-cloud-managedservice:
-      properties:
-        avx-vendor-cert-scep-agent.image.registry:
-          type: REGISTRY
-        avx-vendor-cert-scep-agent.image.repository:
-          type: REPO_WITHOUT_REGISTRY
-        avx-vendor-cert-scep-agent.image.tag:
-          type: TAG
-    avx-cloud-managedservice:
-      properties:
-        avx-vendor-cert-est-agent.image.registry:
-          type: REGISTRY
-        avx-vendor-cert-est-agent.image.repository:
-          type: REPO_WITHOUT_REGISTRY
-        avx-vendor-cert-est-agent.image.tag:
-          type: TAG
-    avx-cloud-managedservice:
-      properties:
-        avx-vendor-cert-network-discovery.image.registry:
-          type: REGISTRY
-        avx-vendor-cert-network-discovery.image.repository:
-          type: REPO_WITHOUT_REGISTRY
-        avx-vendor-cert-network-discovery.image.tag:
-          type: TAG
-
 properties:
   name:
     type: string
