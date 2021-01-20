@@ -6,11 +6,13 @@ metadata:
   labels:
     app.kubernetes.io/name: "{{ .Release.Name }}"
   annotations:
+    kubernetes-engine.cloud.google.com/icon: >-
+      data:image/png;base64,{{ .Files.Get "logo.png" | b64enc }}
     marketplace.cloud.google.com/deploy-info: '{"partner_id": "partner", "product_id": "appviewx", "partner_name": "Partner"}'
 spec:
   descriptor:
     type: AppViewX
-    version: '2020.3.0'
+    version: '2020.3.1'
   selector:
     matchLabels:
       app.kubernetes.io/name: "{{ .Release.Name }}"
