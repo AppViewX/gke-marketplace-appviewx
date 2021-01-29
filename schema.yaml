@@ -125,6 +125,11 @@ properties:
     type: string
     x-google-marketplace:
       type: NAMESPACE
+  istio:
+    type: boolean
+    default: false
+    x-google-marketplace:
+      type: ISTIO_ENABLED    
 
 required:
 - name
