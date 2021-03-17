@@ -34,6 +34,8 @@ gcloud auth configure-docker
 
 You can install AppViewX application in an existing GKE cluster or create a new GKE cluster. 
 
+Minimum required GKE version: 1.16-gke.3
+
 * If you want to **create** a new Google GKE cluster, follow the instructions from the section [Create a GKE cluster](#create-gke-cluster) onwards.
 
 * If you have an **existing** GKE cluster, ensure that the cluster nodes have a minimum of 8 vCPU and 32GB RAM and follow the instructions from section [Install the application resource definition](#install-application-resource-definition) onwards.
