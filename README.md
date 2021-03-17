@@ -34,6 +34,8 @@ gcloud auth configure-docker
 
 You can install AppViewX application in an existing GKE cluster or create a new GKE cluster. 
 
+Minimum required GKE version: 1.16-gke.3
+
 * If you want to **create** a new Google GKE cluster, follow the instructions from the section [Create a GKE cluster](#create-gke-cluster) onwards.
 
 * If you have an **existing** GKE cluster, ensure that the cluster nodes have a minimum of 8 vCPU and 32GB RAM and follow the instructions from section [Install the application resource definition](#install-application-resource-definition) onwards.
@@ -151,29 +153,8 @@ kubectl get pods -n $NAMESPACE --watch
 
 * Click on avx-ingress and look if all the Backend services are marked as green under INGRESS section
 
-* If all the Backend services marked with green you are good to access the application else do the following steps. 
+* If all the Backend services marked with green you are good to access the application. It will take some time for loadbalancer to verify if all Backend services are healthy to be marked as green.
 ```
-Update the health check url for avx-platform-gateway
-```shell
-* Click on avx-platform-gateway from Backend services and click the link under Health Check
-
-* Click on EDIT
-
-* Update the Request Path field with /avxmgr/printroutes
-
-* Save the changes
-```
-Update the health check url for avx-platform-web
-```shell
-* Click on avx-platform-web from Backend services and click the link under Health Check
-
-* Click on EDIT
-
-* Update the Request Path field with /appviewx/login/
-
-* Save the changes
-```
-The above changes are mandatory to access the AppViewX application as by default the health check url for loadbalancer is configured as "/". It will take some time for loadbalancer to update the changes and verify if all Backend services are marked as green.
 
 #### Create TLS certificate for AppViewX
 
