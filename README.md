@@ -151,29 +151,8 @@ kubectl get pods -n $NAMESPACE --watch
 
 * Click on avx-ingress and look if all the Backend services are marked as green under INGRESS section
 
-* If all the Backend services marked with green you are good to access the application else do the following steps. 
+* If all the Backend services marked with green you are good to access the application. It will take some time for loadbalancer to verify if all Backend services are healthy to be marked as green.
 ```
-Update the health check url for avx-platform-gateway
-```shell
-* Click on avx-platform-gateway from Backend services and click the link under Health Check
-
-* Click on EDIT
-
-* Update the Request Path field with /avxmgr/printroutes
-
-* Save the changes
-```
-Update the health check url for avx-platform-web
-```shell
-* Click on avx-platform-web from Backend services and click the link under Health Check
-
-* Click on EDIT
-
-* Update the Request Path field with /appviewx/login/
-
-* Save the changes
-```
-The above changes are mandatory to access the AppViewX application as by default the health check url for loadbalancer is configured as "/". It will take some time for loadbalancer to update the changes and verify if all Backend services are marked as green.
 
 #### Create TLS certificate for AppViewX
 
